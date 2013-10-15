@@ -1,6 +1,6 @@
 module Spree
   class Review < ActiveRecord::Base
-    belongs_to :product
+    belongs_to :product, touch: true
     belongs_to :user
     
     attr_accessible :rating, :review, :name, :product, :user, :product_id, :user_id, :approved
