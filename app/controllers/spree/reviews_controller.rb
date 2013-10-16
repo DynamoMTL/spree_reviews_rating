@@ -18,7 +18,6 @@ module Spree
 
     def new
       @review = Spree::Review.new(:product => @product)
-      authorize! :new, @review
       render :layout => false
     end
     
