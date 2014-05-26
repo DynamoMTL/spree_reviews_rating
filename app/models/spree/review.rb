@@ -2,9 +2,7 @@ module Spree
   class Review < ActiveRecord::Base
     belongs_to :product, touch: true
     belongs_to :user
-    
-    attr_accessible :rating, :review, :name, :product, :user, :product_id, :user_id, :approved
-    
+   
     validates_presence_of :name, :review
     validates_numericality_of :rating, :if => Proc.new {|r| !r.rating.blank?}
     

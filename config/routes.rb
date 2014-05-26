@@ -1,4 +1,4 @@
-Spree::Core::Engine.routes.prepend do
+Spree::Core::Engine.routes.draw do
   
   namespace :admin do
     resources :reviews do
@@ -14,6 +14,6 @@ Spree::Core::Engine.routes.prepend do
     end
   end
   
-  match "/reviews/all_list", :to => "reviews#all_list", :as => :all_reviews
+  get "/reviews/all_list", :to => "reviews#all_list", :as => :all_reviews
   
 end
